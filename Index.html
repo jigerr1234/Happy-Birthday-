@@ -1,0 +1,88 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday Shivaniii</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Sacramento&family=Nunito:wght@300;600&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body, html {
+      height: 100%;
+      overflow: hidden;
+      font-family: 'Nunito', sans-serif;
+      background: linear-gradient(rgba(255, 182, 193, 0.7), rgba(255, 192, 203, 0.8)),
+        url('https://images.unsplash.com/photo-1508923567004-3a6b8004f3d3?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat fixed;
+      color: white;
+    }
+    .container {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 20px;
+    }
+    h1 {
+      font-size: 3.5em;
+      animation: fadeIn 3s ease-in-out forwards;
+      font-family: 'Sacramento', cursive;
+      color: #ffe4f1;
+      text-shadow: 2px 2px 5px rgba(255, 105, 180, 0.7);
+    }
+    .slide {
+      position: absolute;
+      opacity: 0;
+      transition: opacity 1.5s ease-in-out;
+      font-size: 1.9em;
+      font-weight: 300;
+      width: 100%;
+      padding: 0 25px;
+      color: #fff0f6;
+      text-shadow: 1px 1px 5px rgba(255,105,180,0.7);
+    }
+    .slide.active {
+      opacity: 1;
+    }
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: scale(0.9); }
+      100% { opacity: 1; transform: scale(1); }
+    }
+    .credit {
+      position: absolute;
+      bottom: 6px;
+      left: 8px;
+      font-size: 0.4em;
+      color: #ffcce6;
+      opacity: 0.3;
+      font-style: italic;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div id="intro">
+      <h1>Happy Birthday<br>Shivaniii 🎉</h1>
+    </div>
+    <div class="slide" id="slide1">Somewhere out there, someone is missing you a little extra today... 💭 And Yeah Shivanyaa 👀 </div>
+    <div class="slide" id="slide3">Keep smiling, it suits you more than you'll ever know 😊</div>
+        <div class="slide" id="slide3"> Radhe Radhe ji 🙏♥️ </div>
+    <div class="slide" id="slide5">Aur Ahhhh Haa i miss you dayani jii 👀  ️</div>
+    <div class="credit">by your Spiderman 🕸️</div>
+  </div>  <script>
+    const slides = document.querySelectorAll('.slide');
+    let current = 0;
+    setTimeout(() => {
+      document.getElementById('intro').style.display = 'none';
+      showSlide();
+    }, 4000);
+
+    function showSlide() {
+      slides.forEach((slide) => slide.classList.remove('active'));
+      slides[current].classList.add('active');
+      current = (current + 1) % slides.length;
+      setTimeout(showSlide, 3800);
+    }
+  </script></body>
+</html>
